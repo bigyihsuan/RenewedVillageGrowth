@@ -117,6 +117,9 @@ STR_ECONOMY_LUMBERJACK          :Lumberjack Industries
 STR_ECOMONY_WRBI                :Wannaroo Basic Industries
 STR_ECONOMY_ITI2                :Improved Town Industries
 STR_ECONOMY_REAL                :Real Industries
+STR_ECONOMY_MINIMALIST          :Minimalist Industries
+STR_ECONOMY_PIRS                :Pikka's Industries Redux Set (PIRS 2022)
+STR_ECONOMY_DEFAULTINDPLUS_TEMPERATE:DefaultIndustriesPlus - Environnement tempéré
 
 ##### ETERNAL LOVE #####
 STR_ETERNAL_LOVE_OUTSTANDING    :exceptionnel
