@@ -69,6 +69,7 @@ enum Economies
     REAL, // Real Industries Beta
     MINIMALIST, // 1.1
     PIRS, // PIRS 2022
+    DEFAULTINDPLUS__TEMPERATE, // DefaultIndustriesPlus Temperate
     END,
 }
 
@@ -324,6 +325,11 @@ function GetEconomyCargoList(economy, cargo_list) {
     case(Economies.PIRS): // PIRS 2022
         return ["PASS","COAL","MAIL","OIL_","FISH","GOOD","GRAI","WOOD","IORE","STEL","WDPR",
                 "FOOD","FRUT","ENSP","FMSP","RFPR","PETR"];
+
+    case(Economies.DEFAULTINDPLUS__TEMPERATE): // DefaultIndustriesPlus Temperate
+        return ["PASS", "COAL", "MAIL", "OIL_", "LVST", "GOOD", "GRAI", "WOOD", "IORE",
+                "STEL", "VALU", null, null, null, null, null, null, null, null, null,
+                null, null, "LMBR", "LUBR", "PETR"];
     default:
         return [];
     }
@@ -1139,6 +1145,17 @@ function DefineCargosBySettings(economy)
             ::CargoCatList <- [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_MATERIALS,CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS];
             ::CargoMinPopDemand <- [0,500,1500,4000];
             ::CargoPermille <- [60,35,25,15];
+            ::CargoDecay <- [0.4,0.3,0.2,0.1];
+            break;
+        case(Economies.DEFAULTINDPLUS__TEMPERATE): // DefaultIndustriesPlus Temperate
+            ::CargoLimiter <- [0,2];
+            ::CargoCat <- [[0,2],
+                       [1,3,4,6,7,8],
+                       [9,22,23,24],
+                       [5,10]];
+            ::CargoCatList <- [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_MATERIALS,CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS];
+            ::CargoMinPopDemand <- [0,500,1500,4000];
+            ::CargoPermille <- [60,40,25,15];
             ::CargoDecay <- [0.4,0.3,0.2,0.1];
             break;
         default:
