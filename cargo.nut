@@ -65,7 +65,7 @@ enum Economies
     IOTC, // 0.1.4
     LUMBERJACK, // 0.1.0
     WRBI, // 1200
-    ITI2, // 2.14
+    ITI2, // 2.17
     REAL, // Real Industries Beta
     MINIMALIST, // 1.1
     PIRS, // PIRS 2022
@@ -309,8 +309,8 @@ function GetEconomyCargoList(economy, cargo_list) {
         if (30 < cargo_list.len() && cargo_list[30] == "WSTE")
             list.append("WSTE");
         return list;
-    case(Economies.ITI2): // Improved Town Industries 2.14
-        return ["PASS","COAL","MAIL","OIL_","WDPR","GOOD","RFPR","WOOD","IORE","STEL","PAPR",
+    case(Economies.ITI2): // Improved Town Industries 2.17
+        return ["PASS","COAL","MAIL","OIL_","WDPR","GOOD","CHEM","WOOD","IORE","STEL","PAPR",
                 "PLAS","FOOD","BDMT","VALU","LVST","WDCH","SCMT","SCPR","GRAI","WSTE"];
 
     case(Economies.REAL): // Real Industries Beta
