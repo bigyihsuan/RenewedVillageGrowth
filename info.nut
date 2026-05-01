@@ -14,7 +14,7 @@ require("version.nut");
 class MainClass extends GSInfo
     {
     function GetAuthor()                { return "Firrel (fork: bigyihsuan)"; }
-    function GetName()                  { return "Renewed Village Growth bigy-fork"; }
+    function GetName()                  { return "Renewed Village Growth bigy-fork + Peaks & Toughs"; }
     function GetShortName()             { return "REVI"; }
     function GetDescription()           { return "Towns require various cargo deliveries to grow. Required cargos can be randomized. Town growth is limited by percentage of transported specific cargos. Supporting most Industry NewGRF sets."; }
     function GetURL()                   { return "https://www.tt-forums.net/viewtopic.php?f=65&t=87052"; }
@@ -274,6 +274,26 @@ class MainClass extends GSInfo
                 custom_value = 1,
                 flags = CONFIG_INGAME, min_value = 1, max_value = 3 });
         AddLabels("log_level", { _1 = "1: Info", _2 = "2: Cargo", _3 = "3: Debug" });
+        /* === BEGIN P&T === */
+        AddSetting({
+                name = "pt_log_level", 
+                description = "P&T Debug: Log level (higher = print more)", 
+                easy_value = 3, medium_value = 3, hard_value = 3, custom_value = 3, //reminder to set to 1
+                flags = CONFIG_INGAME, 
+                min_value = 1, max_value = 3});
+        AddLabels("pt_log_level", {_1 = "1: Info", _2 = "2: Verbose", _3 = "3: Debug" } );
+        AddSetting({
+                name = "pt_preset", 
+                description = "P&T Preset", easy_value = 2, medium_value = 2, hard_value = 2, custom_value = 2,
+                flags = CONFIG_INGAME, 
+                min_value = 1, max_value = 5});
+        AddLabels("pt_preset", {_1 = "Hyperpeak", _2 = "Equal peaks", _3 = "Japan", _4 = "UK", _5 = "No peaks" } );
+        AddSetting({
+                name = "pt_base", 
+                description = "Passenger rate offset", easy_value = 1, medium_value = 1, hard_value = 1, custom_value = 1,
+                flags = CONFIG_INGAME, 
+                min_value = -4, max_value = 6});
+        /* === END P&T === */
     }
 }
 
