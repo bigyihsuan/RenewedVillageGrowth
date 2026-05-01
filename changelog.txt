@@ -1,4 +1,12 @@
-*** Renewed Village Growth GS Changelog ***
+*** Renewed Village Growth bigy-fork GS Changelog ***
+
+Version 12.2 (2026/05/01)
+- new: AXIS 2.3.x Extreme Classic (bigyihsuan)
+- new: FIRS Forked: Oil Town (bigyihsuan)
+- new: Default Industries Plus (rmnvgr)
+- fix: Improved Town Industries 2.17 incorrect chemicals cargo label (zombifier)
+
+*** Pre-Fork ****
 
 Version 12.1 (2025/07/12)
 - new: Ukrainian translation (mortiy)
