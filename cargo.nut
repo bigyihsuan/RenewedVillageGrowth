@@ -56,6 +56,7 @@ enum Economies
     FIRS5__TROPIC_BASIC, // 5.0.0
     FIRS5__STEELTOWN, // 5.0.0
     FIRS5__IN_A_HOT_COUNTRY, // 5.0.0
+    FIRS_FORKED__OILTOWN, // 5.2.0.3
     XIS__THE_LOT, // 0.6
     AXIS__STEELTOWN, // 2.2.0
     AXIS__TROPICAL_PARADISE, // 2.2.0
@@ -239,6 +240,10 @@ function GetEconomyCargoList(economy, cargo_list) {
         return ["GRVL","BEER","BDMT","CASS","RFPR","CLAY","JAVA","COPR","CORE","DIAM",
                 "EOIL","ENSP","FMSP","FOOD","FRUT","GOOD","LVST","WOOD","MAIL","MAIZ",
                 "MNO2","NUTS","OIL_","PASS","PETR","PHOS","RUBR","SAND","WDPR"];
+    case(Economies.FIRS_FORKED__OILTOWN):
+        return ["BITU","CHEM","COAL","CTAR","COKE","COND","ENSP","ETHY","FERT","FOOD",
+                "FFLD","HOIL","LOIL","LNG_","LPG_","LUBR","MAIL","NAPH","OIL_","PASS",
+                "PETR","PLAS","NGAS","RGAS","SULP","WATR"];
     case(Economies.XIS__THE_LOT): // XIS 0.6: The Lot
         return ["PASS","ACID","MAIL","BEER","AORE","GOOD","BEAN","BDMT","CMNT","RFPR",
                 "CHLO","FOOD","CLAY","COAL","COKE","COPR","CORE","EOIL","POWR","ENSP",
@@ -924,6 +929,21 @@ function DefineCargosBySettings(economy)
                        [1,2,15,7,13]];
             ::CargoCatList <- [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_FOOD,CatLabels.RAW_MATERIALS,
                        CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS];
+            ::CargoMinPopDemand <- [0,500,1000,4000,8000];
+            ::CargoPermille <- [60,25,25,15,10];
+            ::CargoDecay <- [0.4,0.2,0.2,0.1,0.1];
+            break;
+        case(Economies.FIRS_FORKED__OILTOWN): // FIRS Forked: Oil Town
+            ::CargoLimiter <- [19, 16];
+            ::CargoCat <- [
+                [19,16], // public services
+                [2,5,9,18,22,25], // raw and food
+                [3,4,11,12,13,14,17,23,24], // processed mats
+                [0,1,7,10,15,21], // refined mats
+                [6,8,20] // products
+            ];
+            ::CargoCatList <- [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_AND_FOOD,CatLabels.PROCESSED_MATERIALS,
+                            CatLabels.REFINED_MATS, CatLabels.PRODUCTS];
             ::CargoMinPopDemand <- [0,500,1000,4000,8000];
             ::CargoPermille <- [60,25,25,15,10];
             ::CargoDecay <- [0.4,0.2,0.2,0.1,0.1];
