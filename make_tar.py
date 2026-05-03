@@ -13,7 +13,7 @@ from pathlib import Path
 # ----------------------------------
 
 # Game Script name
-gs_name = "Renewed_Village_Growth_bigy-fork"
+gs_name = "Renewed_Village_Growth_byh-fork"
 
 # ----------------------------------
 
